@@ -177,7 +177,7 @@ router.get('/getSavedFile', (req, res) => {
 
             request({url: promise.url, json: true}, (err, response, body) => {
                 body.result = 'OK';
-                    res.status(200).send({url:promise.url,result : 'OK'});
+                    res.status(200).send({data:promise.url,result : 'OK'});
             });
 
         })
