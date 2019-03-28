@@ -177,9 +177,7 @@ router.get('/getSavedFile', (req, res) => {
 
             request({url: promise.url, json: true}, (err, response, body) => {
                 body.result = 'OK';
-                const mimetype = filetype(Buffer.from(body,'utf-8'));
-                console.log(mimetype)
-                    res.status(200).send({data:body,result : 'OK',mimetype:mimetype.mime});
+                    res.status(200).send({url:promise.url,result : 'OK'});
             });
 
         })
